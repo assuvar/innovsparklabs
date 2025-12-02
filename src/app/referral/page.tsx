@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import PageHeader from "@/components/PageHeader";
 import ReferralHero from "@/components/ReferralHero";
 import ReferralDashboard from "@/components/ReferralDashboard";
@@ -6,7 +7,9 @@ export default function ReferralPage() {
     return (
         <main className="min-h-screen pt-20 pb-32">
             <ReferralHero />
-            <ReferralDashboard />
+            <Suspense fallback={null}>
+                <ReferralDashboard />
+            </Suspense>
 
             {/* How it Works Section */}
             <div className="max-w-6xl mx-auto px-4 py-20 border-t border-white/5">

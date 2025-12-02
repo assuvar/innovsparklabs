@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -39,7 +40,9 @@ export default function RootLayout({
         className={`${outfit.variable} font-sans antialiased bg-brand-dark text-brand-light overflow-x-hidden`}
       >
         <TrackingWrapper />
-        <ReferralTracker />
+        <Suspense fallback={null}>
+          <ReferralTracker />
+        </Suspense>
         <Navbar />
         {children}
         <Footer />
