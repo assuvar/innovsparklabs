@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -6,10 +7,14 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
                 <div className="col-span-1 md:col-span-2">
                     <Link href="/" className="flex items-center space-x-2 mb-4">
-                        <i className="fa-solid fa-layer-group text-brand-accent text-2xl"></i>
-                        <span className="text-2xl font-bold text-white">
-                            InnovSpark <span className="text-brand-accent">Labs</span>
-                        </span>
+                        <div className="h-20 w-auto relative aspect-[3/1]">
+                            <Image
+                                src="/assets/logo.svg"
+                                alt="InnovSpark Labs Logo"
+                                fill
+                                className="object-contain object-left"
+                            />
+                        </div>
                     </Link>
                     <p className="text-brand-dim max-w-sm">
                         Empowering students with practical tech skills and innovative project solutions. From idea

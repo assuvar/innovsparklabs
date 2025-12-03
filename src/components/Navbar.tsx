@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 // --- Navigation Data ---
@@ -254,13 +255,16 @@ export default function Navbar() {
             <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center space-x-3 group z-50">
-                        <div className="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:rotate-12 transition-transform">
-                            <i className="fa-solid fa-layer-group"></i>
+                    <Link href="/" className="flex items-center group z-50">
+                        <div className="h-20 w-auto relative aspect-[3/1]">
+                            <Image
+                                src="/assets/logo.svg"
+                                alt="InnovSpark Labs Logo"
+                                fill
+                                className="object-contain object-left"
+                                priority
+                            />
                         </div>
-                        <span className="self-center text-xl md:text-2xl font-bold whitespace-nowrap tracking-tight text-white">
-                            InnovSpark <span className="text-brand-accent">Labs</span>
-                        </span>
                     </Link>
 
                     {/* --- DESKTOP NAVIGATION (Visible >= 1024px) --- */}
